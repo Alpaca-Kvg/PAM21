@@ -13,9 +13,15 @@
 <debug enable="0" />
 
 		<!-- Volume definitions -->
+			
 		
-<volume user="*" fstype="tmpfs" mountpoint="/home/%(USER)/test"
-		options="size=100M,uid=%(USER),mode=0700" />
+<volume user="unix02" fstype="nfs" server="172.18.0.1" path="/usr/share/doc" mountpoint="/tmp/test" />
+			
+			<volume user="unix01" fstype="tmpfs" mountpoint="/home/%(USER)/tmp"
+				options="size=200M,uid=%(USER),mode=0700" />
+
+			<volume user="*" fstype="tmpfs" mountpoint="/home/%(USER)/tmp"
+				options="size=100M,uid=%(USER),mode=0700" />
 
 		<!-- pam_mount parameters: General tunables -->
 
