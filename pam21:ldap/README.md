@@ -1,9 +1,9 @@
 # LDAP server
-## @edt ASIX M06-ASO Curs 2021-2022
+## @alpacakvg ASIX M06-ASO Curs 2021-2022
 
 ### PAM Containers:
 
- * **edtasixm06/pam21:ldap** Container PAM base per practicar autenticació unix i LDAP.
+ * **alpacakvg/pam21:ldap** Container PAM base per practicar autenticació unix i LDAP.
    Utilitza els paquets *libpam-ldap*, *libnss-ldap*, *nscd* i *nslcd* per configurar l'accés al servei ldap
    i configura les regles PAM per permetre tant usuaris unix com usuaris LDAP. En tots dos casos es 
    munta en el home un recurs tmpfs temporal. En el cs dels usuaris LDAP si el seu home no existeix
@@ -44,7 +44,7 @@ $ getent group
 
 
 ``` 
-docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -d edtasixm06/ldap21:grup
+docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -d alpacakvg/ldap21:grup
 docker run --rm --name pam.edt.org -h pam.edt.prg --net 2hisix --privileged -it pam21:base
 
 ```
