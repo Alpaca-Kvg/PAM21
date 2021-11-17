@@ -7,7 +7,13 @@ echo -e "unix01\nunix01" | passwd unix01
 echo -e "unix02\nunix02" | passwd unix02
 echo -e "unix03\nunix03" | passwd unix03
 
+cp /opt/docker/nslcd.conf /etc/
 cp /opt/docker/login.defs /etc/login.defs
+cp /opt/docker/pam_mount.conf.xml /etc/security
+cp /opt/docker/nsswitch.conf /etc
+cp /opt/docker/common-session /etc/pam.d/
+service nscd start
+service nslcd start 
 
 /bin/bash
 
